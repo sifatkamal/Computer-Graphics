@@ -44,11 +44,11 @@ def showScreen():
     glColor3f(1.0, 1.0, 1.0) #konokichur color set (RGB)
     #call the draw methods here
 
-    for i in range(100):
+    for i in range(50):
 
-        x = random.uniform(100, 1000)
+        x = random.uniform(0, 500)
 
-        y = random.uniform(100, 1000)
+        y = random.uniform(0, 500)
 
         draw_points(x, y)
 
