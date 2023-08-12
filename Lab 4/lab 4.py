@@ -53,8 +53,8 @@ def transform():
 
 
     # Translation
-    tx = 10
-    ty = -50
+    tx = 30
+    ty = 0
     t = np.array([[1, 0, tx],
                   [0, 1, ty],
                   [0, 0, 1]])
@@ -62,7 +62,7 @@ def transform():
 
     # scaling
 
-    sc = 0.5
+    sc = 1
     s = np.array([[sc, 0, 0],
                   [0, sc, 0],
                   [0, 0, 1]])
