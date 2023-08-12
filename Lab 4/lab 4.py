@@ -70,23 +70,32 @@ def transform():
                    [50],
                    [1]])
 
-    # rotation
-    # v11 = np.matmul(r,v1)
-    # v22 = np.matmul(r,v2)
-    # v33 = np.matmul(r,v3)
-    # v44 = np.matmul(r,v4)
+# ----------------------------------------------
 
-    # scaling
-    # v11 = np.matmul(s,v1)
-    # v22 = np.matmul(s,v2)
-    # v33 = np.matmul(s,v3)
-    # v44 = np.matmul(s,v4)
+    # Translation
+    tx = 10
+    ty = -50
 
-    # rotation - scaling
-    v11 = np.matmul(rs, v1)
-    v22 = np.matmul(rs, v2)
-    v33 = np.matmul(rs, v3)
-    v44 = np.matmul(rs, v4)
+    t = np.array([[1, 0, tx],
+                  [0, 1, ty],
+                  [0, 0, 1]])
+
+    rt = np.matmul(r, t)
+
+    v11 = np.matmul(rt, v1)
+    v22 = np.matmul(rt, v2)
+    v33 = np.matmul(rt, v3)
+    v44 = np.matmul(rt, v4)
+
+
+# ----------------------------------------------
+
+
+
+
+
+
+
     #
     glColor3f(1, 0, 0)
     glBegin(GL_QUADS)
