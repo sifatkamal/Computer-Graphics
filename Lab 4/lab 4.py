@@ -42,20 +42,32 @@ def transform():
     glVertex2f(300, 300)
     glEnd()
 
-    a = math.cos(math.radians(45))
-    b = math.sin(math.radians(45))
 
 
-    r = np.array([[a, -b, 0],
-                  [b, a, 0],
+
+
+
+
+
+
+
+
+    # Translation
+    tx = 10
+    ty = -50
+    t = np.array([[1, 0, tx],
+                  [0, 1, ty],
                   [0, 0, 1]])
+
+
+    # scaling
 
     sc = 0.5
     s = np.array([[sc, 0, 0],
                   [0, sc, 0],
                   [0, 0, 1]])
 
-    rs = np.matmul(r, s)
+    ts = np.matmul(t, s)
 
     v1 = np.array([[-50],
                    [50],
@@ -70,25 +82,18 @@ def transform():
                    [50],
                    [1]])
 
-# ----------------------------------------------
-
-    # Translation
-    tx = 10
-    ty = -50
-
-    t = np.array([[1, 0, tx],
-                  [0, 1, ty],
-                  [0, 0, 1]])
-
-    rt = np.matmul(r, t)
-
-    v11 = np.matmul(rt, v1)
-    v22 = np.matmul(rt, v2)
-    v33 = np.matmul(rt, v3)
-    v44 = np.matmul(rt, v4)
 
 
-# ----------------------------------------------
+
+
+
+    # translation and scaling
+    ts = np.matmul(t, s)
+
+    v11 = np.matmul(ts, v1)
+    v22 = np.matmul(ts, v2)
+    v33 = np.matmul(ts, v3)
+    v44 = np.matmul(ts, v4)
 
 
 
